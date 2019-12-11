@@ -13151,7 +13151,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Imports</span>
@@ -13176,7 +13176,7 @@ div#notebook {
 <span class="n">API_KEY</span> <span class="o">=</span> <span class="s1">&#39;XXXXX-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&#39;</span>
 <span class="c1"># We have our API key loaded from a json file (can also be stored as an evironment variable if you would like)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;api_key.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-  <span class="n">API_KEY</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s1">&#39;API_KEY&#39;</span><span class="p">]</span>
+    <span class="n">API_KEY</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s1">&#39;API_KEY&#39;</span><span class="p">]</span>
 
 <span class="c1"># Set random seed</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -13187,32 +13187,11 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-Data-Collection-(API-Crawling)">3. Data Collection (API Crawling)<a class="anchor-link" href="#3.-Data-Collection-(API-Crawling)">&#182;</a></h1><ul>
-<li>To gather match data, Riot provides an <a href="https://developer.riotgames.com/apis">API</a> that has data for matches, players (summoners), champions (playable characters), ect.</li>
-</ul>
-<ul>
-<li>However, Riot only provides match data from a given matchID which cannot be randomly gotten. Therefore, we need to start from a seeded playerID and crawl through that players' teammates and opponents matches to generate enough data to preform data analysis.</li>
-</ul>
-<ul>
-<li>Our set seed will be on one of our summoner IDs "50g Tibbers" on the North American server. </li>
-</ul>
-<h3 id="Using-Riot's-API">Using Riot's API<a class="anchor-link" href="#Using-Riot's-API">&#182;</a></h3><ul>
+<h1 id="3.-Data-Collection-(API-Crawling)">3. Data Collection (API Crawling)<a class="anchor-link" href="#3.-Data-Collection-(API-Crawling)">&#182;</a></h1><p>To gather match data, Riot provides an <a href="https://developer.riotgames.com/apis">API</a> that has data for matches, players (summoners), champions (playable characters), ect.</p>
+<h2 id="Using-Riot's-API">Using Riot's API<a class="anchor-link" href="#Using-Riot's-API">&#182;</a></h2><ul>
 <li>Riot has a <a href="https://developer.riotgames.com/">developer portal</a> which you will need a Riot <a href="https://developer.riotgames.com/login">account</a>. </li>
 <li>You will need an API Key and generate it daily or <a href="https://developer.riotgames.com/app-type">apply for a product API key</a> which will persist.</li>
 <li>Documentation can be found at <a href="https://developer.riotgames.com/apis">https://developer.riotgames.com/apis</a></li>
@@ -13222,76 +13201,36 @@ div#notebook {
 </ul>
 </li>
 </ul>
+<h3 id="Random-Game-Data">Random Game Data<a class="anchor-link" href="#Random-Game-Data">&#182;</a></h3><ul>
+<li>Riot only provides game data from a given gameID which cannot be randomly gotten. Therefore, we need to start from a seeded playerID and crawl through that players' teammates and opponents games to generate enough data to preform data analysis.</li>
+</ul>
+<ul>
+<li>Our set seed will be on one of our summoner IDs "50g Tibbers" on the North American server. </li>
+</ul>
+<h3 id="Ranked-Game-Data">Ranked Game Data<a class="anchor-link" href="#Ranked-Game-Data">&#182;</a></h3><ul>
+<li>Riot provides a way to obtain random player info based on a given tier and division #. We will use this to evenly crawl through players to get their ranked matches. </li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/50g%20Tibbers?api_key=RGAPI-6345f4f0-360f-4c68-afc2-4036d7097a80&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;id&#39;: &#39;IpnPo_LsY61sOsbPsRgVhwe1jmNdXF-m84rnkO3UwISwRY0&#39;,
- &#39;accountId&#39;: &#39;e9Po7IYch-H6xHFLKmwAAoVDSXHRRIvdpbWQv-6mtLM7njA&#39;,
- &#39;puuid&#39;: &#39;RZkfzEJAMhOrIZ7nM6EMbSNg0ww6phNe_RhEQPR3YgU2gCSg6yTRkgQEiSgjGrCEDxFnif23D93kcQ&#39;,
- &#39;name&#39;: &#39;50g Tibbers&#39;,
- &#39;profileIconId&#39;: 3800,
- &#39;revisionDate&#39;: 1575959895000,
- &#39;summonerLevel&#39;: 103}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_random_matches</span><span class="p">(</span><span class="n">num_matches</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed_summoner</span><span class="o">=</span><span class="s2">&quot;50g Tibbers&quot;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s2">&quot;na1&quot;</span><span class="p">,</span> <span class="n">season</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">sleep_delay</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
     <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     
+    <span class="c1"># Do not use the rank parameter as of now. There is a better way to generate games per rank. </span>
+    <span class="c1"># https://developer.riotgames.com/apis#league-v4/GET_getLeagueEntries</span>
+    
     <span class="c1"># Estimated Time based on rate limit</span>
     <span class="n">seconds</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_matches</span> <span class="o">/</span> <span class="mi">50</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">num_matches</span> <span class="o">*</span> <span class="n">sleep_delay</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will take minimum </span><span class="si">{}</span><span class="s2"> seconds to complete. If rank option is selected, it will take longer.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">seconds</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will take minimum </span><span class="si">{}</span><span class="s2"> seconds to complete. </span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">seconds</span><span class="p">))</span>
     
     <span class="c1"># Get seed summoner accountId</span>
-    <span class="n">seed_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/summoner/v4/summoners/by-name/</span><span class="si">{}</span><span class="s2">?api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">seed_summoner</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+    <span class="n">seed_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/summoner/v4/summoners/by-name/</span><span class="si">{}</span><span class="s2">?api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">seed_summoner</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">seed_request</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Code 404. Invalid seed_summoner or region.&quot;</span><span class="p">)</span>
         <span class="k">return</span>
@@ -13311,7 +13250,7 @@ div#notebook {
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="c1"># Request 1</span>
 
         <span class="c1"># Grab account&#39;s match history</span>
-        <span class="n">match_history</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/match/v4/matchlists/by-account/</span><span class="si">{}</span><span class="s2">?api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">accountId</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="n">match_history</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/match/v4/matchlists/by-account/</span><span class="si">{}</span><span class="s2">?api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">accountId</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="c1"># Request 2</span>
 
         <span class="c1"># Get most recent game from season parameter. Then grab gameId to get match info.</span>
@@ -13340,7 +13279,7 @@ div#notebook {
         <span class="n">gameId</span> <span class="o">=</span> <span class="n">most_recent</span><span class="p">[</span><span class="s1">&#39;gameId&#39;</span><span class="p">]</span>
 
         <span class="c1"># Grab match info</span>
-        <span class="n">match</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/match/v4/matches/</span><span class="si">{}</span><span class="s2">?api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">gameId</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/match/v4/matches/</span><span class="si">{}</span><span class="s2">?api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">gameId</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="c1"># Request 3</span>
         <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found match #</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">gameId</span><span class="p">,</span> <span class="n">accountId</span><span class="p">))</span>
@@ -13358,9 +13297,9 @@ div#notebook {
                     <span class="n">accountId</span> <span class="o">=</span> <span class="n">chosen_one</span>
                     <span class="k">break</span>
                 <span class="n">player_counter</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="c1"># If all players have been seen... add match to blacklist</span>
+                <span class="c1"># If all players have been seen... temp solution to abort</span>
                 <span class="k">if</span> <span class="n">player_counter</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="s1">&#39;participantIdentities&#39;</span><span class="p">]):</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;uh oh...&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All players seen. Abort&quot;</span><span class="p">)</span>
                     <span class="k">return</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Invalid match found... </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gameId</span><span class="p">))</span>
@@ -13374,7 +13313,23 @@ div#notebook {
         
     <span class="c1"># Display runtime and return matches list</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found </span><span class="si">{}</span><span class="s2"> matches in </span><span class="si">{}</span><span class="s2"> seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">),</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">matches</span>
+    <span class="k">return</span> <span class="n">matches</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">visited_players</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_solo_tier_matches</span><span class="p">(</span><span class="n">tier</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;na1&#39;</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.api.riotgames.com/lol/league/v4/entries/RANKED_SOLO_5x5/</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">?page=</span><span class="si">{}</span><span class="s2">&amp;api_key=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">tier</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">))</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">ranked_players</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;summonerId&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">query</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ranked_players</span>
 </pre></div>
 
     </div>
@@ -13387,7 +13342,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="n">get_random_matches</span><span class="p">(</span><span class="n">num_matches</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matches</span><span class="p">,</span> <span class="n">players</span> <span class="o">=</span> <span class="n">get_random_matches</span><span class="p">(</span><span class="n">num_matches</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13512,6 +13467,301 @@ Found 100 matches in 456.1784031391144 seconds.
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#matches[0]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">team_info</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rowId&#39;</span><span class="p">,</span> <span class="s1">&#39;gameId&#39;</span><span class="p">,</span> <span class="s1">&#39;seasonId&#39;</span><span class="p">,</span> <span class="s1">&#39;gameVersion&#39;</span><span class="p">,</span> <span class="s1">&#39;gameMode&#39;</span><span class="p">,</span> <span class="s1">&#39;teamId&#39;</span><span class="p">,</span> <span class="s1">&#39;win&#39;</span><span class="p">,</span> <span class="s1">&#39;bans&#39;</span><span class="p">,</span> <span class="s1">&#39;champ1&#39;</span><span class="p">,</span> <span class="s1">&#39;champ2&#39;</span><span class="p">,</span> <span class="s1">&#39;champ3&#39;</span><span class="p">,</span> <span class="s1">&#39;champ4&#39;</span><span class="p">,</span> <span class="s1">&#39;champ5&#39;</span><span class="p">,</span> <span class="s1">&#39;firstBlood&#39;</span><span class="p">,</span> <span class="s1">&#39;firstInhibitor&#39;</span><span class="p">,</span> <span class="s1">&#39;firstBaron&#39;</span><span class="p">,</span> <span class="s1">&#39;firstDragon&#39;</span><span class="p">,</span> <span class="s1">&#39;firstRiftHerald&#39;</span><span class="p">,</span> <span class="s1">&#39;towerKills&#39;</span><span class="p">,</span> <span class="s1">&#39;inhibitorrKills&#39;</span><span class="p">,</span> <span class="s1">&#39;baronKills&#39;</span><span class="p">,</span> <span class="s1">&#39;dragonKills&#39;</span><span class="p">,</span> <span class="s1">&#39;riftHeraldKills&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">matches_cleanup</span><span class="p">(</span><span class="n">matches</span><span class="p">):</span>
+    <span class="n">team1_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">team_info</span><span class="p">)</span>
+    <span class="n">team2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">team_info</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">players</span> <span class="o">=</span> <span class="n">get_solo_tier_matches</span><span class="p">(</span><span class="s2">&quot;DIAMOND&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">)</span>
+<span class="n">players</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[135]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;mnDNpC4Mabhd23pAoMVohettvaHYZANib2sBDpnALlfwWRc&#39;,
+ &#39;DnDHtMNN1XJ9OfpStPSaO04HuwIJp9Sjwkr5xwhISvU58yY&#39;,
+ &#39;Feh4l6pzNFBPZRq3ULaYBp09rCcLv-laYKhJPyum_RH83Fs&#39;,
+ &#39;qCLGbxC3ok0dF4KXO0I43XwafWDC2cjbpxXLRLEAoX63qr8&#39;,
+ &#39;8H7K7DEEPSG7oar7tgkrFbG3eyset9tofohgQWHX6bxNQ8M&#39;,
+ &#39;N7YjQXgn3B2jVVd1C_d9ComnWJKhz0S15SSZxnerbCij6rk&#39;,
+ &#39;Wcp2Z4g9e2SVkjk7fi_k7tJ7twGEK8b0q-Aaz9bzHOHM11c&#39;,
+ &#39;V-gnUHGKlTUMPfa7awJlUy0V0kugLHUec-dZqReulWYLjsE&#39;,
+ &#39;EqvWfug0S1gLFsdytzpN982tUwFAvX74bzSduJicR7N0Nw8&#39;,
+ &#39;nBFQ0u-FbX4AeEP2JM9m-yfIp-kX5o0nC5H1eqLBZSaSq0A&#39;,
+ &#39;4tHYShVcKnzz28RAqxYcgarZh2t-IWO7Fn7og7bfeFoKkjI&#39;,
+ &#39;pEA0PHSth_kuotrXZtbYEOtvk79KyWweSNfG70HL4TaMpVc&#39;,
+ &#39;XE-qaWkhS_fmZ9jDoMUf0WSbjboqZ_jbLZsI0gdHpr-YeIs&#39;,
+ &#39;qYV4e6ka_v5zHFwwykKk4Rlm7o5LoeiBlzO7lWRdVUnLv14&#39;,
+ &#39;hrYbe4gtOA1FsTxp-nSojdMFkSDdoiqtHwGT6Gw_7qcjogc&#39;,
+ &#39;9dW4womsZYwxnK0VKnwlzjYoTTPn1ODpW4tTxrogFWHY9Bw&#39;,
+ &#39;zW9Sl-nC35zmp2rkOPCJQjk8b9tmmS1tLVUyiRwUNSEuSRY&#39;,
+ &#39;AU5ROcQVx_wIIV_baDPG6UPg61tCILpv4sP0xEeMKMeYb_M&#39;,
+ &#39;7QSitilcBcZUuLMiseiS5k8vq4mRRDxWkYy0hKqPGMxJ1Ic&#39;,
+ &#39;qix4nHRHP6MVbVWvmGuWnuKPgMilS2kWeNlM5Y9AsuPBptE&#39;,
+ &#39;_QYI9M7dc6B7IGUoUVX4JZOImGIVuhgtpA_PbY-oIZdb1O8&#39;,
+ &#39;BCUPt5q_42VMrZB2c1iZVSmIXDdhgBHNk0SZY8d3zr0o3A0&#39;,
+ &#39;mKIiuKy1yI3n31ghf3d5vvQJNH7eAbVNVDWgXzYbqzFMHoo&#39;,
+ &#39;jZaj8JaByGQvF5KZWivEExGRN2JyIuoR4bZ19kV1T0LNeZo&#39;,
+ &#39;5-8hd393-W5rvuSAnxAG-dMQHwAs1_VIc6jWPuATXqGjp5c&#39;,
+ &#39;jUJUHLxRK_bp0RHjYmohEsh_R6d7ugtkS1yuGEe8s0x7f2w&#39;,
+ &#39;RftYjZuf40Baw60rl_iviWQFml5pUKGlsfKuVzcxGEVmJOU&#39;,
+ &#39;xtBYfs1d2NL-pZIA5Th-X_aiIa8_kUCwlXi--FhL1b94jSc&#39;,
+ &#39;iEWK2VOovgjIjeqBPUXmkt8kk-X9fDWzzurbPIxyV2xoU18&#39;,
+ &#39;5HripIKihmsnIkPQidSgzOumBFMPHCuDwEkeKFDKmml_n8E&#39;,
+ &#39;MTnGaKrJVjvuBLpIYijQkBQYbWguCPN2ouSmkL5VjHccqyw&#39;,
+ &#39;GyHV_KRA45rPkAphSNqWzrVK18DVZ0gRhCfRRCNU2Y0s-NE&#39;,
+ &#39;hLyYMEo5NdCcqYmHRaUn1V2mTGBRoPLzab64rJxdccBS0KY&#39;,
+ &#39;_0sad6oL-wtBrv9DbYH1M8UL7nLAJdOa58i2eOzvwUwYUGw&#39;,
+ &#39;oY6IIRz7wtGDXYS_Db8VdcDsZWnl4rapL6MTCeVw4ssir1I&#39;,
+ &#39;kLhkA1NzZGdW0V7GnREOmpGTRdygDUi72XfFYzyrWPwyXmA&#39;,
+ &#39;NgtV93WLC-PzHx8yyBwJX_GWDe7sQWKo_bI0Zc_6sv2aq7A&#39;,
+ &#39;x55A9-2Ek2NHvzMXDlLt8qM5wNPPS1prTVd42ovr6yaB7gU&#39;,
+ &#39;Q6LtGaPTIjA8bd6kog5fqf2y2duRHwFiR7vQEnb6cmWHowg&#39;,
+ &#39;kIurJmn2TwGGdJyl1Rdz1-7a3ckw9Pxs6GoIYtaJbzMyHI0&#39;,
+ &#39;PUj8kIp1wu_2cNhw9Q6KrHctKnXPZu2i2JJNsXoTsBFHNqY&#39;,
+ &#39;AhoCdUQU51PwAw-jyNX7JMPxCWDmY9dtT_F-n586q3xzrKM&#39;,
+ &#39;FA5Hac2Ea88Au9Oj31ZBvDj1MWxt0UNYG-2BMcpgGtwfrs4&#39;,
+ &#39;eYhYrByOrJ740bhRr9CIxAQ4KD2oqY2leoo1hAja7vs-Fy0&#39;,
+ &#39;UewtXHj5-3cCJSypdgPiDeIKoZrMtwXkqf4EypZ7Bs0nZQw&#39;,
+ &#39;wRAniLGdSNRgH7Og_B9y-Pn1oeOs9WyP5Y9HZ_zZrYKHjC4&#39;,
+ &#39;CRRUB5pVgdvjTIH_BNkhPioTx_b8ovC8_ExxBZdZwYozu4s&#39;,
+ &#39;e9dgiXqdPNZInMldTXYRclXUaBlQZnJmTnlyZgkg0kBOojA&#39;,
+ &#39;BjqzeaN3CTNhtnderYV8fK5I-txgP9eljih8RxiExUvmlKs&#39;,
+ &#39;5Gdofua8LmWFIjuFuMp396JQZ3w8GC_je-RbRocaKpGRtds&#39;,
+ &#39;2892nlO9xmN8RF_KXeFFdIhop6-7PvFC7dUPEHE4ziebJ0k&#39;,
+ &#39;21bPUxzd0JuXDy912XIGfsUCaxYv81wKbCN-cafi4AuYkiY&#39;,
+ &#39;HuYjhHEpzdNuNeaMpA_iA27zfqoZDUfs7FUOr2fLMM4ICNE&#39;,
+ &#39;KnDUQajoxtdl-99DcYEOYRo7s2iXuf7f9sjYOfUEE_6sSk8&#39;,
+ &#39;t_N90x7piWuHaGJ4KcKD_YAC8-elZ0P2toXd4MFnmJSCULc&#39;,
+ &#39;wv3YD564D859kHqxIQ9wrtauLAbTbklqHrMEsIyg4izoxr8&#39;,
+ &#39;TELh6lZiROTyBMX9uHL7clq-A43x2id2cCQQN_naJoOEn4E&#39;,
+ &#39;Tmq_njZGWnktwFzT362JEHNQAkAOOx-hLZ6Wb9YDp1Oz8_k&#39;,
+ &#39;7-paWjxuSIdw6Mw18S1Y3qFSAokjyRqBpql55oXLQj2NdPQ&#39;,
+ &#39;K9vdJhc47dXVQJk18iv1lhEIuoSZduT9Se3GL409B_HJeu4&#39;,
+ &#39;VK-_JqgHTlK-1nXBFhX2nDEHZmHPNK6ji1dlQyx4aPlNGog&#39;,
+ &#39;NoP1lVSvJ4IBvgea6PZ3j45gghYFxTfsB9r_c9NStu1pABw&#39;,
+ &#39;Ux4TDFLJZydCs0QfAbFiW7iBYcmTRFPrEUaE2PoPtghGQFw&#39;,
+ &#39;zzPCTb-Wju5pJtOJvLNbJltshdVeiX33KRzx6vxpr15xI3M&#39;,
+ &#39;jgi3LBm0HwBjPpTYNpwYAgQfLaludJZyAcJ-iV8hVnicyGc&#39;,
+ &#39;9aQr4WL6W5doif_LVSgbgz-0ygbYM6rEisTbl9BLNAvRXb8&#39;,
+ &#39;MYMvRQxIkIqvM5WTkEO7jt4bGe-mtUk7Ep51mN9aBKSbwhA&#39;,
+ &#39;WycIAiQ7CkSl1fD2aQl2jX5gtToCaU7aZ9mOWpeRCARiEIw&#39;,
+ &#39;PEGl5URON_iuT0U5HnSN0vsoPMAP75XMcR5lm2DfG7tRS1Q&#39;,
+ &#39;LiR33AzM-mf1NfglzSXkgPJO0jQ1ojgV1lNhLdv0rd9PtKs&#39;,
+ &#39;PSPzAuFyt-YlDWx4zdPI9i9lUsRtHWm18o79gg2eIthvlsI&#39;,
+ &#39;YKu0beq0Tr_yVDyVu1nEZ9Kd-fxn9k9KiYASb4_jaWKWfiE&#39;,
+ &#39;2pn4skUZmOT2BbnRYzFiOnq1iXP4sQNm7hYbRWIZ7Q7AuI8&#39;,
+ &#39;YiHy7VhQFTxtTDhLDMzVPQrsitHNBmWGDMiLaw-Hw1sHPto&#39;,
+ &#39;rxTXwyqY2Vji8GqlQEmijvUP2jXqL5T4sEBv-8lxlsxYAjk&#39;,
+ &#39;X6H3sJjNsb_wtSo2JYP1Sc_vjSwSCMWdygbKEoARNI9BkzI&#39;,
+ &#39;3FyAAW8NokrOBq2KCzGc1DSj9YvQh4mupM0kjwjtF4Z8GOM&#39;,
+ &#39;ZAlFWKOlWx7cjBTnFtA87WhXH5wqf31SxECIDRsWJYXNkEg&#39;,
+ &#39;E3uej6SIJ9kFf2QzSbH6UWgXAe5BzO_NhzKNBasSoHqLRsM&#39;,
+ &#39;gVnYdOEjch4GiW08u7VTKbELeP9I8ssqFhV3y7fpb3Sn9m0&#39;,
+ &#39;FBUebsP09YNUXUubcv7B4gaPC2xZkGajUdyLfVdjwpba0-0&#39;,
+ &#39;pCcJE8svn0BBuhrnv9Bwlm9KY_RBDZFfhcyQXaZpwhhEIhk&#39;,
+ &#39;qWP2cRz87MGSLD8ZSyLBxBHG15Ob-_izVicT4jvefqvY8jk&#39;,
+ &#39;m42vnZpY8jrOSawm-PoU8ET_TuxjI6wdr-oycedSrR2MTPU&#39;,
+ &#39;CvP4zHS5UHFLBuAENHyvmf6qYVuzg0drHbLZxmxzJ_0rRsw&#39;,
+ &#39;r6t0w0NC20W6ia2rGe6RFAiRmyT6hfE3uhrvC0WBdIG50Bg&#39;,
+ &#39;YIAb_oAsdKo00SNiSy3_kqPfFw5W9PvxOsK3BuRs95Qe3zw&#39;,
+ &#39;9lrFMaw2l_afq7MYVYmwZeQ-XFAVl23yFJBGCl0IlF87aas&#39;,
+ &#39;3gqwm7vV2OsB1gGYPlSCJg-M6Wb1y2rO06WyqnWr-TCIZnQ&#39;,
+ &#39;CSsj1ayiX9PbgkivrODbUDFpO9bZ4MqMiAse3Lxd_Jvvg9I&#39;,
+ &#39;XF6s4amYhrTZ5hKq0BXP5-bmd7_ddhkMGCqskmw9qq_UGdc&#39;,
+ &#39;udR58kyxeTpz_OiYhcmozEcq1saCIWcBjV7621tossTHBo8&#39;,
+ &#39;GWEZOg1NS_9-yqPxFDmK7yNk9va18FfbjDvpQOQg0BLujys&#39;,
+ &#39;glZIeDAZz_QGeUYPTs_tfzMp0TQ7nmhQU_RvOSoEjeEXF5U&#39;,
+ &#39;zxy5_Eipjrg9IaydtTk8m0uBKTPO--PFR6oJHwFmRhBPtu8&#39;,
+ &#39;LWx8W4CaId8GMYZiCCzR3nlhh10vgdg7xk2EXVEb2EOuuzA&#39;,
+ &#39;LjIWgSQqzkCfFAHBvQOsQ9GsUynXPj8bNXhaitWHEA5EMWA&#39;,
+ &#39;_wXT3ulJGnNSMqchu7yx4ShL9XnMmn5go7S_s3zFUUByssk&#39;,
+ &#39;lv_DrjhYXSHXqAnCPHFr2U8ZRIbHA2VirKJxbQPYem7iyPk&#39;,
+ &#39;EZ8Qj5jwUYRzLQiw6Y2xY4DR8zAZM_BhTcs3re4BBFYwnSM&#39;,
+ &#39;TmjlBMzPABGVfagSeRQ5r_nTTAt-fwVTHIBl3biza5JaTGU&#39;,
+ &#39;1YD8DvfQ4tH7qGWJOjTU5n7WnCcNHU0pJtJheB1-WNvJPj0&#39;,
+ &#39;C_O2Q0qqLBU-O_eqNxUwPWvydvLnN2bgJucFCvndeNMiP0c&#39;,
+ &#39;H-spfGq2wtpd49msHgieA8L-exrd69H05st3AyQubVtkb34&#39;,
+ &#39;5Ysy_W-WocYqxJpWWDCbr4CfIcO5uMEP-nXxqJvZiA_DJc4&#39;,
+ &#39;82DMhMo9lcIgkdKttzv38lTxV6aCPlea7VOHP9s9bZbYh6U&#39;,
+ &#39;vLZESE6FWrTs5CnqLm169ZE-N1sJ6rm20RkWDgR0dt6DveY&#39;,
+ &#39;NlAbMhDcFV2KxxqzRnCiTDp1cfumGpFq5Fd0rL8cFC5wUUo&#39;,
+ &#39;4EPBpgN2DRvSkgA9-PjRHT1THvYo_qBU97dgCu_NmpaTDmc&#39;,
+ &#39;xdksn_cHxFs7udwtVWmzYXK85EEKTw4pJZVz9DMJw45_DJA&#39;,
+ &#39;jpNFyv79wx-wOSsTzWV2H6QwfChDXAjKEpTyza5401MzrIg&#39;,
+ &#39;CzkxgZRvGhjPXJ8sKeeJ8H59mBc3D1ZL_XNtFZnqRPKVgUs&#39;,
+ &#39;Er_m2cowYAzMeQIQZ4B6B0fyY9jOAgl3W_eCkWUKxDSFrTc&#39;,
+ &#39;img3EZvbs7cIQa0UjWW4g9478LT1l1E-JGnQ2_lsZgcSu-g&#39;,
+ &#39;WPU1fTA6xlEMP8LHwx2FvbZeNVCxgj3Id1sKl517FXPaH8o&#39;,
+ &#39;8r_JF87oLi6clc3SBufthJAYZtloZ63GS4MXwpUitzdM33o&#39;,
+ &#39;dr--aqIFIOCnIXTJm1jE1L60BnbuLaxL9uq1U-3uJiuUyDQ&#39;,
+ &#39;lwrsZNb2rU2fE7Ux7O5_MQChLu7J4IglnO-Tpqhx7Gogpeo&#39;,
+ &#39;k_xF7_3Tgjv05VuvTEiejB0DGs3Sf04bC9AGAvNfWUOolfM&#39;,
+ &#39;dMfD_RepfZ-bXFwA5mk1V39XBmK4sJz09KPFKb6kKV5fjlE&#39;,
+ &#39;XnD91j93C8hftQNSe_A-8dplZIBsJRKS0K2LACjD5N5pkQ8&#39;,
+ &#39;GjzuTXtbHSsuZxQzc2C1Z2lm2980Vws_dTpmUyif2YtoExY&#39;,
+ &#39;LY-VX44-xQcXyFvVMD2uXguZNWj_KHRoUB7ppiXtBp9AJLs&#39;,
+ &#39;CZjDHgIcBMYVMTK4PWaESRtXr2s-uidMMNILBRdb6TfTuXo&#39;,
+ &#39;dk2sW73jRo5byzirOmbQHRlcCxN-VLvYV5_a0Hg5mOF55ME&#39;,
+ &#39;Hn6NraCe-vg_jBwirDBaCYQwsr5Gz35APoEyefSqYlA4QCg&#39;,
+ &#39;t1fVRLCC2ti1LgkC4oa4fREkspIDXcn9WZq4Zpk_zV8a514&#39;,
+ &#39;HZmchHHrFFDwCryMpraVQS_JxeoUPZfTKsf4FGlJPXzu7GE&#39;,
+ &#39;BcZHebJcLQWYD9OSYZggQ5QWnhb-jHwgQDfWv-upVXY-s5I&#39;,
+ &#39;M0RGESAdEfnDiw1A8w7dMGHPzh3XiB4U5tTX3mlFaDYGYT8&#39;,
+ &#39;eHT0I9mGoxfZd4G1uf4pfHcwVeOBxCxB-UAXAvxD0HM_Q5Y&#39;,
+ &#39;sUqKORUiNboEaDRIgKcx9dR0YXbXkb0LYAkXYMy1sqkyvS4&#39;,
+ &#39;TRwSsBHo3AGHnrALRZvmgLsHnpAtWm1yMJef0RfNwu_XAwg&#39;,
+ &#39;FYMt7x5LJ2tebwukonFm_iZzTmqAdHAlS6dAU69wFHO792Q&#39;,
+ &#39;ducPa1l_cu_5qFReRhOxOM3wSg89zA0rXeEaeXDbDp4mcAI&#39;,
+ &#39;wh2lpLSpLFjp9YkXM-BqyHqv5jdQwDkepWDTIFLMmtBcGf8&#39;,
+ &#39;3gyhINoNNgZmYFGM6q0JzDOFxAaCWAcLuNlfc-Ej4-z1iCc&#39;,
+ &#39;r3bca0T4IjZLV9PAKV6TQEFKm1R2qLB7cTU8p-Jo60ShOoU&#39;,
+ &#39;V7hNk56jbeft0GG6wRUqI71fAbImm-ZyYgpxMwTXN1OrhCM&#39;,
+ &#39;3-ubUZm95clM4Eq9DDwaHm9il8xOV4KKWrdOSEMfV3Pd8G4&#39;,
+ &#39;F9K8qPaDLazp9qTYVVgt_dR5gGHgHOaVLe7VTwTOPj-2-IY&#39;,
+ &#39;H5fnZN8Hjp002D_M4C1jaomk98RzMtVF9xCeLry_88Xeqb8&#39;,
+ &#39;qrPlHNfHVujLwrm0_LS6Lg4CKfd9Z4Ey7jp3XpLXVNWLtOE&#39;,
+ &#39;FxYw1GtUvIcezpzfTknTQNGDTrRCJCnTZTEGzriJKW0dKlA&#39;,
+ &#39;OdPLcVZ3ojfLSya8KHybhrjG1CBwP-AbmXnvHlSrU8Q9sS4&#39;,
+ &#39;7MJ9wxAjq7yHhlNLHRLzX9XW-CswqcELdVSJNg2OJYVOCK0&#39;,
+ &#39;w7i4WbhHDX5rSKqHx6RMpzjkb807iq-f_FwtZUDL9MEXWJc&#39;,
+ &#39;g0fS-_f0d9895kKY31aatyD1OhEN8P7xUKAYqSZ8oLoDC60&#39;,
+ &#39;I6zeCxxo2Vag4L0UvAn_6cxOa_j5Ya4qi0E6beSw0IQhXXM&#39;,
+ &#39;CA-9UYHNKB0PLkzlPyfRkhuBWND7ROowemc78Pma9LSUraA&#39;,
+ &#39;lpsTX-7AnOoGJQs1liKlNLRcbELmDytBh4_1SgnGHqn-Ivw&#39;,
+ &#39;HBQYZhJUTeoBVqKOkvTAXW2Al_c_8kWvCyiJncbsRp9s3fk&#39;,
+ &#39;p2gpAXEfCgpaJqS3X39UUjIMukgnmITvfXpeokzm5FdNu-Y&#39;,
+ &#39;86hWHdcRoF1XOCT39A79ydCechKy7vq2dlrkNbdTjfuMPjU&#39;,
+ &#39;SGxOIG9EXcks4vverqTvgszrCj8skVhJQAOGSmYlYZd2oeY&#39;,
+ &#39;6oc_2l94sUFO9w9EGibV_B2cwxQ7MX-mKE5em9bJpsJgXPY&#39;,
+ &#39;w9tQaEsOfYMDhaLfa-Gz-aUgPw9Mi55QGVsS2C2uzkclRE8&#39;,
+ &#39;h6Wa3N35J39PF77pdiN4BJVcI4nn6PVA4QtLMSYUNw1eT-M&#39;,
+ &#39;1W2BCKcZdVRUdAoBaAxdrA3IIsp5YhgWye-UJ7N9OMo8ebg&#39;,
+ &#39;gzTLUlDGpI621QscKW3-SZalrlqmpyDY_S19rVgekOF81EA&#39;,
+ &#39;Sh67aFAoC3-1P5Cp1tdgkB6VuyFPVL0bb_a3Cu4KpeBvhO0&#39;,
+ &#39;mHnbCNvgg757W033ogzfR8STIerhX4cD8ai3oQxH1_X18rE&#39;,
+ &#39;vgCZ2SNoj4VSIERKakksxMsjsZV85fMAMvF6VAuWv07aAPg&#39;,
+ &#39;wOCLVqnPpMaMNv4Hjm8V17QY98fn56Cmpy-uQZkUo1pqovQ&#39;,
+ &#39;fnRLreMQxlQp_rn9yHfW_2VFSlr2KhNwEk9Yp6mf3rfiPWU&#39;,
+ &#39;-E38UGHslWRsCWsjsfsCAdUWiK7GBWo1wAKnHWRbU5v2OvU&#39;,
+ &#39;RqssxgeWXCKo46RXWJJ3MGtb8LcevjpQyKrSl8S3Er-nXHA&#39;,
+ &#39;KjM_DTypjYGJrRW3ZVDVd9J4NsDeuxdSuKOgSd4eQAU8cfE&#39;,
+ &#39;fvHhNn5lSpmYh-owSgXWZH1xNgwDsvvabGvwrdEvtdIfaKc&#39;,
+ &#39;LYKJJ073l5I1lLMV-Imre97kQ9dMxe2XXoyhFGmY43psPJ8&#39;,
+ &#39;ZzGFprvgypa_IXv2ZW3tc752ZfU7DhDzTcQP35YfZnuTQPQ&#39;,
+ &#39;a2r0nqUuqAfWpvvJdqhl6lI5G6aW6DbIlyalQoN6MS86Yj0&#39;,
+ &#39;vKMKIa3xGa8UUZXxJN43e7dfr87CsCAIZS2iMljtnA5h_lI&#39;,
+ &#39;DnmbZ2Bwkue2e6X2WH6TauhK5k9JCDXDhHIigSR6L6KvVgc&#39;,
+ &#39;2moQ7ZqJeDcLEcxlmio08lexjo3M1mLXG0p1TqkewkwVM0o&#39;,
+ &#39;m7RQg8wRAo5a52f8P5d2Ppz6GalM8hxghAPnTmfmMo1yTbw&#39;,
+ &#39;JjJhOmWOz6lKGprlrDu0nTR4mLKlWX3pBAAMycT9MDyWMZU&#39;,
+ &#39;3NF2Lrx-4wwbMD2Rxvj2iOLLqey9uwqazfz30OoA0Lxg_h8&#39;,
+ &#39;M86iw9O3Ai3WDSg7yRXjHZBFbJC3d-tAtsZQG8kmjfGsEiM&#39;,
+ &#39;qXnWwaQQAai9cggXsbrwbiDcopMlEki2sk6B6pmRgz2VVk0&#39;,
+ &#39;NFIuoS_2GEV4pav--DM0ZPDZaEqEhGbHs6f_N709rHCvhQ4&#39;,
+ &#39;cjFhRc8PqKxdEcuJLFYcvf4z4xOa-GzOpdA56evFfZ8leF8&#39;,
+ &#39;hkPE0atR0ua3bATlg86yDy0ajLDtWsHPfomF92PRd8ZPcxE&#39;,
+ &#39;7weTGnzDfp5kKPBVJQELQYWhjqBaGTYko1Xf4NAQqBw8FyQ&#39;,
+ &#39;ro43m7QhFz0L8hxH43RBjtIllHxpNlbYkhbX3ZzkoBi5a0I&#39;,
+ &#39;44zIXqNyDq6wb_Ky2Gem5M2OsbS2q_9eun6GNa8IROsUSN4&#39;,
+ &#39;ENQpibKKm3mchL2Aw0utKRVJLhrfylrVgeYCsAVjJvWHQow&#39;,
+ &#39;HZ_8dJJDCNmYT167F2KunQBz8HzvhDInEdN38OvqsVh6XN0&#39;,
+ &#39;xH5XNE-SqEPcvgpQ79ipcNnC0OvwlmNjihMrMx93ssjIFjo&#39;,
+ &#39;dwsI4VYlHcNxtHvrE3o2pohXEKKkW4mbuPUpLP4ha6mmT4w&#39;,
+ &#39;H1OpEjV18Way0YgE_p5K_HMZDzjKeKe8bFj5n_g9SK61mIY&#39;,
+ &#39;CYcPwXJuEjkfwTRdSNvQBJwtWuap0tvkL8EbxRFO3sGSORA&#39;,
+ &#39;SxqachrOUVivL-6S2GA79XpA-d3czkwPMBl97pRd47d7K5E&#39;,
+ &#39;PsKl2HhREEeQYVLBRIpAIXLrd-g5e4a-cugzK5AFOZIbaQw&#39;,
+ &#39;YJR38PnLqfhs600y4rd0OkrJZjSzEPJdvO-t_Zl9s6GHB68&#39;,
+ &#39;l1tNF8gQFBx93mx8UjR0zO4fTbBdMOjs1hzijUh437gS_O4&#39;,
+ &#39;9yPJz3ZKZj5c60V48qQptDOQ_RQ5Pcty_SOqkREK4FGSVBY&#39;,
+ &#39;w-jeELHQY5WX5nW-V46-LD20fG3YHoP1h8iFVcdydHoFJtU&#39;,
+ &#39;Oxh8yCe3X0ubfGQg7S0hdkexCh0alFvAlmvYGNcmENe_eKE&#39;,
+ &#39;jrMt8QdgPWCZriINNNU8LfX2zePWNNUA-tlUNRi7_ydwG5k&#39;,
+ &#39;re4KFY4WktVhavcAfA12i6EhFRUU9sEjJsTFRZZo_8eMRcQ&#39;,
+ &#39;V0ewCjaEd4jyApztngDI_aHZDa_erzGaRqxofDg1YNlZwcM&#39;,
+ &#39;nIrdE_V4X9NGRHC61VToyiqLZqWxRJf4yAAfZeZVOExrbBk&#39;,
+ &#39;upz3BSv_et4WYcfi0erH71BuzUUjiZHW-DyEyDHAyIsHMSo&#39;,
+ &#39;YQAd9XCv_mQOFbzWvXAckLoKROVal0DT7HxhVnEete0pqjo&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
