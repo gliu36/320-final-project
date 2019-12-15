@@ -1,0 +1,121 @@
+Attempting to get match history for accountId: e9Po7IYch-H6xHFLKmwAAoVDSXHRRIvdpbWQv-6mtLM7njA
+Found match #1: 3230641357 for e9Po7IYch-H6xHFLKmwAAoVDSXHRRIvdpbWQv-6mtLM7njA
+Player 1, summonerId: u3hgu6OSYPZyTfZ6QsRLYeVZQo7ZIo2-u-EbRknJVsrlZec, Tier: GOLD, Rank: III
+Player 2, summonerId: _wPeIXZOp9llE_4CHAY60YJAGAXuCcE--844EgI0OwM2VCU, Tier: SILVER, Rank: II
+Player 3, summonerId: pyylEUtmsIdHA6XK6DVa7s78F4nM5KPSU6nLHOxK3nQqu3E, Tier: SILVER, Rank: II
+Player 4, summonerId: fTYHg_J0f59BCKPMIaxrRTskHj12rF3dqrjVr9drFuyn_Ik, Tier: SILVER, Rank: IV
+Player 5, summonerId: t_24_n0xdm8jANEvts-kSuKccs2L6uNwM1e5exqGfp_5JrM, Tier: GOLD, Rank: III
+Player 6, summonerId: IpnPo_LsY61sOsbPsRgVhwe1jmNdXF-m84rnkO3UwISwRY0, Tier: PLATINUM, Rank: II
+Player 7, summonerId: FrOukjlGpmgEufAklfxp0TFQ4ogpqPB1Cf5p2pZ7TSfriqU, Tier: PLATINUM, Rank: III
+Player 8, summonerId: m-6zaTHYmTiS3uq5MTUeKvjB1zau7ALdLqjWPdOca-fUK60, Tier: UNRANKED, Rank: N/A
+Player 9, summonerId: egRuKe_B0Pn1Mp0eJcZngnss9ozf3yY-qKeO5dksTAWBIUY, Tier: GOLD, Rank: IV
+Player 10, summonerId: BOgJZwsJ0Ueyw0FknzztfIQ8SOeBOyrmYA_vHhesAYduxsc, Tier: PLATINUM, Rank: IV
+Attempting to get match history for accountId: OlIOHlCU94HT-X461oSorGmmlU-ewukgptZ-qiel9TuZQEM
+Found match #2: 3234382736 for OlIOHlCU94HT-X461oSorGmmlU-ewukgptZ-qiel9TuZQEM
+Player 1, summonerId: oCo2-HL60MOnNRQhMxr2b82HeSDZfOGuFdnr40260LsoszY, Tier: PLATINUM, Rank: IV
+Player 2, summonerId: VEg4uNAe_Kf1hCp1OnTAn1gF9NnApbxSZ-f9Oe375KizJOo, Tier: DIAMOND, Rank: IV
+Player 3, summonerId: 1_7h4ypuPBL9LyA9pKNyUwmbKxIkagygX62tB7m3Q1Vn4qg, Tier: GOLD, Rank: III
+Player 4, summonerId: QcwlSl4x2JEU_z8a-Dpcww1T9FhfsJ0sdgyXY1FO8qxrGJ0, Tier: PLATINUM, Rank: II
+Player 5, summonerId: FrOukjlGpmgEufAklfxp0TFQ4ogpqPB1Cf5p2pZ7TSfriqU, Tier: PLATINUM, Rank: III
+Player 6, summonerId: RFBdZFBlSi10DVgL4QMYhwGDTa1VlaPyhk190mFgriQwE8s, Tier: DIAMOND, Rank: IV
+Player 7, summonerId: WIKlkkasseBt1s3ZjCKli9rUNhkLA_HHRfnvzANk4gQizEI, Tier: BRONZE, Rank: I
+Player 8, summonerId: yXLQWiXcYv101qMg_Dj8rYEskUzRKECftyPwSh5G8gB1A0o, Tier: PLATINUM, Rank: II
+Player 9, summonerId: snLI-zzRljrzEhyiYfSrN0pCCQ7ze0QZy29KH4u_saCDy58, Tier: UNRANKED, Rank: N/A
+Player 10, summonerId: ndwgdWqNHcEzU_ucbMj12NYM7CJtjaSMhpEIG6Hz8d3UKdY, Tier: GOLD, Rank: II
+Attempting to get match history for accountId: uOTp8z3pMogi9ZOjEkzmJf8AUyGGwiwx4wmESt_ElFz6Gg
+Found match #3: 3234334144 for uOTp8z3pMogi9ZOjEkzmJf8AUyGGwiwx4wmESt_ElFz6Gg
+Player 1, summonerId: L9m4mvpfUcla8Ln20YnT2j5uKl_kLeMQG_jf716q3lsfw9s, Tier: UNRANKED, Rank: N/A
+Player 2, summonerId: snLI-zzRljrzEhyiYfSrN0pCCQ7ze0QZy29KH4u_saCDy58, Tier: UNRANKED, Rank: N/A
+Player 3, summonerId: ndwgdWqNHcEzU_ucbMj12NYM7CJtjaSMhpEIG6Hz8d3UKdY, Tier: GOLD, Rank: II
+Player 4, summonerId: coR7ITU5vsY43apr7oMbVvwJoblR2gIRp6XsiTIU9QPk5x8, Tier: UNRANKED, Rank: N/A
+Player 5, summonerId: kcnZ-D6dMuQJZuSIlBx6p4a6KJQJ9SICdW0lpB8oTrQt0mY, Tier: GOLD, Rank: I
+Player 6, summonerId: 8zi9wXGuO5GRzWQ8_sZXuuhcaZeq0hhjLmhL-cXQSify3sA, Tier: PLATINUM, Rank: IV
+Player 7, summonerId: nnxbwH5rf9C4Iwi0UNWxnKcTVBeMQgjpV-jYHq4_YyGLHtc, Tier: SILVER, Rank: II
+Player 8, summonerId: E2Vd8eWryLE9FYTPn42-uc4g_tzom9K0mWmP3V1Vdto_u-s, Tier: DIAMOND, Rank: IV
+Player 9, summonerId: dmtBIDhcZUHxueQl2JVT1bEBki_DXBriN2YG7t-LMZ1HMz0, Tier: PLATINUM, Rank: I
+Player 10, summonerId: lRZEmnnRBSQ4JSo6_GZldAiZCgfKlsMwtZWELW4xt9tF5XI, Tier: DIAMOND, Rank: IV
+Attempting to get match history for accountId: WJurm7GZ932HZZ39hJcONWb787wjXKqixv-VNSNN1RyrJbo
+Found match #4: 3234484827 for WJurm7GZ932HZZ39hJcONWb787wjXKqixv-VNSNN1RyrJbo
+Player 1, summonerId: oaEeEaOEJdSYPi3DpgHLDFq2XlO637G8X39Aueq4NhEKxZk, Tier: PLATINUM, Rank: IV
+Player 2, summonerId: Xgqjcj0JDkUM8sta1_PEb2Z4gtjfnV4vruUZj9g9DTIs7Pw, Tier: GOLD, Rank: III
+Player 3, summonerId: w5Q-FAcmzMB_ZePGqbRNWDek0Fto_tX3YcK5144B_iTFXT0, Tier: SILVER, Rank: II
+Player 4, summonerId: GwWjh2Xt1NnQAGw1-VOgRCd7S3iFm6VKD-vLmcu6inBTzX4, Tier: PLATINUM, Rank: IV
+Player 5, summonerId: xmO988deH_OS4RlL9jSGhSg2LCL_4nIpHOCLs5I2tl68KN7w, Tier: BRONZE, Rank: III
+Player 6, summonerId: E2Vd8eWryLE9FYTPn42-uc4g_tzom9K0mWmP3V1Vdto_u-s, Tier: DIAMOND, Rank: IV
+Player 7, summonerId: lRZEmnnRBSQ4JSo6_GZldAiZCgfKlsMwtZWELW4xt9tF5XI, Tier: DIAMOND, Rank: IV
+Player 8, summonerId: DJVDksn8GoyrBR4snswMOk4NJlXUp1DgYw1JAkbGUxjUYMw, Tier: SILVER, Rank: I
+Player 9, summonerId: e3djq6Fg7x9_qf1JgglARU-2ZRlWeRGypsnxVGXhfRzXquk, Tier: GOLD, Rank: II
+Player 10, summonerId: AuNtYVzqTYrDFl3oYkmHknd_5QypbcZnrWLEkWUruG4AHTc, Tier: GOLD, Rank: IV
+Attempting to get match history for accountId: yf9XJWrOA5GVSAyAwJYvb7ldl92f6WduqUbUdtMWVmKEOA
+Found match #5: 3235495581 for yf9XJWrOA5GVSAyAwJYvb7ldl92f6WduqUbUdtMWVmKEOA
+Player 1, summonerId: DJVDksn8GoyrBR4snswMOk4NJlXUp1DgYw1JAkbGUxjUYMw, Tier: SILVER, Rank: I
+Player 2, summonerId: GgLeTAa0r3WEb4ml0V9ib_FmA3Sht-StWvcZAkfqLKtLB9M, Tier: PLATINUM, Rank: IV
+Player 3, summonerId: e3djq6Fg7x9_qf1JgglARU-2ZRlWeRGypsnxVGXhfRzXquk, Tier: GOLD, Rank: II
+Player 4, summonerId: AuNtYVzqTYrDFl3oYkmHknd_5QypbcZnrWLEkWUruG4AHTc, Tier: GOLD, Rank: IV
+Player 5, summonerId: LtEiS-dsa51FraNNUjWzYfAno_5exoaI_CbBBMMjyoCFp4g, Tier: GOLD, Rank: II
+Player 6, summonerId: vHTitAU5tEAx2YjLDbfwd5QjJsKQMH4-FjJFKnYM_vQxddM, Tier: GOLD, Rank: III
+Player 7, summonerId: m7O7K-56nm7LSbeSb9ZsE_wAJmsZi3KIh947WICor82dCPY, Tier: GOLD, Rank: II
+Player 8, summonerId: 9_g-dbKYawZKM3d1yChMsX1nkXSC4PDT3aOizMHFtQK_oRU, Tier: GOLD, Rank: IV
+Player 9, summonerId: UXpGhyKx7XHW0j3793AAgbc0WffMshd-zCDIsT79SCVo2KI, Tier: DIAMOND, Rank: IV
+Player 10, summonerId: UJXyZc9Ak9yh8U6a_iNupiK5Wl714xOEMZk3Lxqi_LX7VYU, Tier: SILVER, Rank: I
+Attempting to get match history for accountId: Ikr4_KRC24jnmyi8G-3u7FtPH62rKilj87ysXe5sKsIqbeo
+Found match #6: 3235547347 for Ikr4_KRC24jnmyi8G-3u7FtPH62rKilj87ysXe5sKsIqbeo
+Player 1, summonerId: nYaLk4jk4fnLG7LOl__JZIUauzRyTKdCEucgDbXGKVwVLf4, Tier: UNRANKED, Rank: N/A
+Player 2, summonerId: ar6XtZNwoC8rUs0MxzIkknI5XkTFdbXjnDVhocftbqSEjO8, Tier: DIAMOND, Rank: IV
+Player 3, summonerId: ogdhBOIfErgK-f_KIifetGmyKKATesttvWzOo9PXGPLLSMs, Tier: UNRANKED, Rank: N/A
+Player 4, summonerId: EL53WYXy8a_oC2S-i8RBKPehU--K24TWluQfY6W5sfeNtDk, Tier: UNRANKED, Rank: N/A
+Player 5, summonerId: U4arLV4HoXX1drEhTj5bpUxhvaCtWpERK7V_ebAO51bPTts, Tier: GOLD, Rank: III
+Player 6, summonerId: 1L1Fj_1kjIaYuULGrQZnDJTflwSpdsaS0RGg8_HMwoEXg3c, Tier: GOLD, Rank: III
+Player 7, summonerId: K8JsX0GzCgH9uTmfRCGImTIsfpH_ko6-jMawdbF28ug2vsk, Tier: PLATINUM, Rank: II
+Player 8, summonerId: fEs4Ct0_wQvObK_JCiV5cVHAJJj8-qhFx2PJdlOsSBbqb34, Tier: PLATINUM, Rank: IV
+Player 9, summonerId: uepM_HnmXci5fPUPN4aujGXVGBa5_g6JCXDUy95hGllAOds, Tier: PLATINUM, Rank: IV
+Player 10, summonerId: e3djq6Fg7x9_qf1JgglARU-2ZRlWeRGypsnxVGXhfRzXquk, Tier: GOLD, Rank: II
+Attempting to get match history for accountId: gKMEg4IRMaPhdLLmXupifnv6DzRmQwXxZ3O3ezH_ieQgffw
+Found match #7: 3235569908 for gKMEg4IRMaPhdLLmXupifnv6DzRmQwXxZ3O3ezH_ieQgffw
+Player 1, summonerId: nYaLk4jk4fnLG7LOl__JZIUauzRyTKdCEucgDbXGKVwVLf4, Tier: UNRANKED, Rank: N/A
+Player 2, summonerId: ar6XtZNwoC8rUs0MxzIkknI5XkTFdbXjnDVhocftbqSEjO8, Tier: DIAMOND, Rank: IV
+Player 3, summonerId: ogdhBOIfErgK-f_KIifetGmyKKATesttvWzOo9PXGPLLSMs, Tier: UNRANKED, Rank: N/A
+Player 4, summonerId: EL53WYXy8a_oC2S-i8RBKPehU--K24TWluQfY6W5sfeNtDk, Tier: UNRANKED, Rank: N/A
+Player 5, summonerId: ttpG_NBZdLUsEpCXhUjW8pl6igfJ_togyItcOoSZvKDcnSQ, Tier: GOLD, Rank: I
+Player 6, summonerId: fllxBTDvXy3qosreR1Uow1vMIuZU4qSi3xjIZLRcHJSEmnA, Tier: GOLD, Rank: II
+Player 7, summonerId: edbO5U4D5NPLTunWbalDVRweMKjpY6jZvGC_dP_lXq99bS0, Tier: GOLD, Rank: IV
+Player 8, summonerId: GJ7_YhmRKCL-7jUSERYmZzyHos934zZcUF5RkkwyRQXi8y0, Tier: GOLD, Rank: III
+Player 9, summonerId: JAnYo7m-8aIglHJpDIhYNeCdW42C9pMlhT2qeuGxPksymCk, Tier: GOLD, Rank: II
+Player 10, summonerId: mi20Nrt7kIIbjIjVsnAseBOaFTWvI6yTJXxfVPXnLaG3e7M, Tier: GOLD, Rank: IV
+Attempting to get match history for accountId: 3GxDw28RJIZzVyRxhGslArSFgIAgFWjrhquPsgnzoRgAog
+Found match #8: 3225322598 for 3GxDw28RJIZzVyRxhGslArSFgIAgFWjrhquPsgnzoRgAog
+Player 1, summonerId: oSznXCK5tYvFrNH_JJsG84xGXn60X_nzLxtanxw2_w77Tw8, Tier: UNRANKED, Rank: N/A
+Player 2, summonerId: 6C-KrCt20Dzhw-TrGNHaUWQUgp05RCWtq2QBXw_VQsZlR_Y, Tier: PLATINUM, Rank: IV
+Player 3, summonerId: nYaLk4jk4fnLG7LOl__JZIUauzRyTKdCEucgDbXGKVwVLf4, Tier: UNRANKED, Rank: N/A
+Player 4, summonerId: ar6XtZNwoC8rUs0MxzIkknI5XkTFdbXjnDVhocftbqSEjO8, Tier: DIAMOND, Rank: IV
+Player 5, summonerId: EL53WYXy8a_oC2S-i8RBKPehU--K24TWluQfY6W5sfeNtDk, Tier: UNRANKED, Rank: N/A
+Player 6, summonerId: pdZzZ_ka7-JoalIDB8SVi7MBFcHjwPy_MX8oIjgnoFKiA3k, Tier: DIAMOND, Rank: I
+Player 7, summonerId: VFz0Z_SqagrVfjQmU4fd9JHxBtDO_8CTzLrkyExYKkba61Q, Tier: PLATINUM, Rank: I
+Player 8, summonerId: jSJO6TD1JldPp1bp1Uf1q69sDkyrh6t0suRpdqEWLE0N5yY, Tier: PLATINUM, Rank: III
+Player 9, summonerId: vxKj806k1bXF_U1lsfmAvNTsVY8Hux6ofIDkG0xlNLQqcds, Tier: PLATINUM, Rank: II
+Player 10, summonerId: iWLClW8fTsEZiiT0rC0-ZtJah41CL6e5TafLe6GKFYyijIw, Tier: DIAMOND, Rank: I
+Attempting to get match history for accountId: _kGjy5l_DUwsMNE-dLCaLyRq81gIoLfEjwEiaBzpFlwI8pA
+Found match #9: 3235576764 for _kGjy5l_DUwsMNE-dLCaLyRq81gIoLfEjwEiaBzpFlwI8pA
+Player 1, summonerId: JnBrtZUOvicFR-QkEvfug5AJf6h6GgFSfkfaUea-MbWp3-IA, Tier: UNRANKED, Rank: N/A
+Player 2, summonerId: X0HcvcZvd5hbJZpc8AfS63XpSDY8tc_S8VPS59zssF1JtCux, Tier: UNRANKED, Rank: N/A
+Player 3, summonerId: IiHGtuk3XoDetY1RzSyInr6a0q1M-nfv6Gpv3tydg4_TGtre, Tier: UNRANKED, Rank: N/A
+Player 4, summonerId: 32--c6v78UZJCC71I4bW96aFp85dB4-QmMJNxFvBha6UgUfz, Tier: UNRANKED, Rank: N/A
+Player 5, summonerId: dwrdLQWORfr5tELFQzqttxZmw41MRe1fJJJthSsrPJ7h5wA, Tier: UNRANKED, Rank: N/A
+Player 6, summonerId: 2i5hPuagc9J_Y7LLa7FRMFTClCRKNDXDQfwhGM5KAVXjjuQ, Tier: GOLD, Rank: IV
+Player 7, summonerId: VFz0Z_SqagrVfjQmU4fd9JHxBtDO_8CTzLrkyExYKkba61Q, Tier: PLATINUM, Rank: I
+Player 8, summonerId: ac1_t4_YII_ytrLIgHlmdW8UjumsWY5U1rCb23fMUtnMQS0, Tier: UNRANKED, Rank: N/A
+Player 9, summonerId: VlZhtJ7uIUxz0WruDnHTzloWz-xcm2FvbfgLTm8MY7j_QYo, Tier: PLATINUM, Rank: IV
+Player 10, summonerId: rzprN4_RqkzuYuQhv29_xQyls71cVfFnihmts102pVRAiaVd, Tier: UNRANKED, Rank: N/A
+Attempting to get match history for accountId: S6S0wlOtcCg4y2czxQC782AeA3MVmyVVBXROlGCD-Hz4Ze0lztLyRt18
+Found match #10: 3235551244 for S6S0wlOtcCg4y2czxQC782AeA3MVmyVVBXROlGCD-Hz4Ze0lztLyRt18
+Player 1, summonerId: RTRVb96TOD_stQcte1IemzN0U-MRVZBBN60UqwDwcrk7D1Fr, Tier: UNRANKED, Rank: N/A
+Player 2, summonerId: soj7cTxwH4IdrsfNiS1IcwBfM_P6e4T0N_VLTPcvc7GN7H-P, Tier: UNRANKED, Rank: N/A
+Player 3, summonerId: HKLzK7PZSowWYtc84kFgrLjLKGGFEHqOl4mkKcUCRk0BYlU5, Tier: UNRANKED, Rank: N/A
+Player 4, summonerId: kG1Bm13DLCsJwf7Yqcibjb1KUbjJd0_ysPdoHVfhdfvHdhW8, Tier: UNRANKED, Rank: N/A
+Player 5, summonerId: lDaNzZd9ytu5VNjHBjc88MFI8pwxInL-wokOsOI9ih63d6b5, Tier: UNRANKED, Rank: N/A
+Player 6, summonerId: JnBrtZUOvicFR-QkEvfug5AJf6h6GgFSfkfaUea-MbWp3-IA, Tier: UNRANKED, Rank: N/A
+Player 7, summonerId: X0HcvcZvd5hbJZpc8AfS63XpSDY8tc_S8VPS59zssF1JtCux, Tier: UNRANKED, Rank: N/A
+Player 8, summonerId: IiHGtuk3XoDetY1RzSyInr6a0q1M-nfv6Gpv3tydg4_TGtre, Tier: UNRANKED, Rank: N/A
+Player 9, summonerId: 32--c6v78UZJCC71I4bW96aFp85dB4-QmMJNxFvBha6UgUfz, Tier: UNRANKED, Rank: N/A
+Player 10, summonerId: dwrdLQWORfr5tELFQzqttxZmw41MRe1fJJJthSsrPJ7h5wA, Tier: UNRANKED, Rank: N/A
+Found 100 matches in 192.25054168701172 seconds
